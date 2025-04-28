@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        超链接标签：
+            a
+                href:用于定义要跳转的目标资源的网址
+                    1.完整的url: https://www.atguigu.com/
+                    2.相对路径：以当前资源的所在路径为出发点去找目标资源
+                        ./表示的当前资源的所在路径，可以省略不写的
+                        ../表示当前资源的上一层路径，需要时必须显示写出
+                    3.完整路径：
+                        /...：/表示项目（这里指JAVAWEB）
+                        自身相对路径改变时，完整路径仍有效
+                target:用于定义目标资源的打开方式
+                    _self：在当前窗口打开资源（默认）
+                    _blank:开启新窗口打开资源
+    -->
+    <!-- 完整的url -->
+    <a href="https://www.atguigu.com/" target="_blank">尚硅谷</a>
+
+    <!-- 相对路径 -->
+    <a href="./02标题段落换行.html" target="_blank">02标签</a>
+
+    <a href="a/b/test.html" target="_blank">test</a>
+
+    <!-- 绝对路径 -->
+    <a href="/demo1-html/a/b/test.html">test2</a>
+  </body>
+</html>
