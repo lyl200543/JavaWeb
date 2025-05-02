@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // function ready(){
+        //     var btn=document.getElementById("btn1");
+        //     btn.onclick=function(){
+        //         alert("按钮单击了")
+        //     }
+        // }
+
+        window.onload=function(){
+            
+            var d=document.getElementById("d1");
+            d.onclick=function(){
+                d.style.backgroundColor="red";
+            }
+
+            var btn=document.getElementById("btn1");
+            btn.onclick=function(){
+                // alert("按钮单击了")
+                d.onclick();
+            }
+
+        }
+    </script>
+
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<!-- <body onload="ready()"> -->
+<body>    
+    <div class="div1" id="d1"></div>
+    <br>
+    <button id="btn1">按钮</button>
+    <a href="07BOM编程.html">转到07</a>
+</body>
+</html>

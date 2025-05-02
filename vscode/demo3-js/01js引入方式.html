@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        引入方式
+            1 内嵌式
+                在head中通过一对script标签定义脚本代码
+            2 引入外部脚本文件
+                在head中通过一对script标签引入外部js文件
+                注意:
+                1 一个html中可以有多个script标签
+                2 一对script标签不能在引入外部js文件的同时定义内部脚本
+                3 script标签如果用于引入外部js文件,中间最好不要有任何字符,包括空格和换行
+     -->
+
+     <style>
+        .btn1{
+            width: 90px;
+            height: 30px;
+            background-color: yellow;
+            border: 2px solid rgb(149, 3, 3);
+            font-size: 14px;
+            font-family: '隶书';
+            color: brown;
+            border-radius: 5px;
+        }
+
+     </style>
+
+    <!-- 内嵌式 -->
+     <!-- <script>
+        function surprise(){
+            //弹窗
+            alert("hello,我是惊喜");
+        }
+     </script> -->
+
+     <!-- 外部引入 -->
+      <script src="js/surprise.js" type="text/javascript"></script>
+
+      <script>
+        function hello(){
+            alert("hello,js!");
+        }
+      </script>
+
+</head>
+<body>
+    <button class="btn1" onclick="surprise()">点我有惊喜</button>
+    <button class="btn1" onclick="hello()">hello,js</button>
+</body>
+</html>
