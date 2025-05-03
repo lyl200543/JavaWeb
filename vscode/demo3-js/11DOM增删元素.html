@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        增删元素
+            var element =document.createElement("元素名") // 创建元素
+            父元素.appendChild(子元素)               // 在父元素中追加子元素
+            父元素.insertBefore(新元素,参照元素)     // 在某个元素前增加元素
+            父元素.replaceChild(新元素,被替换的元素) // 用新的元素替换某个子子元素
+            元素.remove()                            // 删除当前元素
+     -->
+
+     <script>
+        function fun1(){
+            // 创建元素
+            var njli=document.createElement("li")
+            // 设置子元素的属性和文本
+            njli.id="nj"
+            njli.innerText="南京"
+            // 将子元素放入父元素中
+            var parent=document.getElementById("city")
+            // 在父元素中追加子元素
+            parent.appendChild(njli)
+        }
+
+        function fun2(){
+            var njli=document.createElement("li")
+            njli.id="nj"
+            njli.innerText="南京"
+            var parent=document.getElementById("city")
+            var szli=document.getElementById("sz")
+            parent.insertBefore(njli,szli)
+        }
+
+        function fun3(){
+            var njli=document.createElement("li")
+            njli.id="nj"
+            njli.innerText="南京"
+            var parent=document.getElementById("city")
+            var szli=document.getElementById("sz")
+            parent.replaceChild(njli,szli)
+        }
+
+        function fun4(){
+            var szli=document.getElementById("sz")
+            sz.remove()
+        }
+
+        function fun5(){
+            var parent=document.getElementById("city")
+            //将列表中的内容删除
+            //1.
+            // var fc=parent.firstElementChild
+            // while(fc!=null){
+            //     fc.remove()
+            //     fc=parent.firstElementChild
+            // }
+
+            //2.
+            parent.innerText=""
+
+            //将列表整个删除
+            parent.remove()
+        }
+     </script>
+</head>
+<body>
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li id="sh">上海</li>
+        <li id="gz">广州</li>
+        <li id="sz">深圳</li>
+    </ul>
+    <hr>
+    <button onclick="fun1()">在最后添加南京</button>
+    <button onclick="fun2()">在深圳前添加南京</button>
+    <button onclick="fun3()">将深圳替换为南京</button>
+    <button onclick="fun4()">删除深圳</button>
+    <button onclick="fun5()">删除列表</button>
+</body>
+</html>

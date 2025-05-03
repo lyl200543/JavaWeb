@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        对元素进行操作
+            1. 操作元素的属性   元素名.属性名=""
+            2. 操作元素的样式   元素名.style.样式名=""  样式名"-" 要进行驼峰转换
+            3. 操作元素的文本   元素名.innerText   只识别文本
+                               元素名.innerHTML   同时可以识别html代码 
+            4. 增删元素   
+     -->
+
+     <script>
+        function fun1(){
+            var ele=document.getElementById("t1");
+            ele.type="button";
+            ele.value="嗨";
+        }
+
+        function fun2(){
+            var ele=document.getElementById("t1");
+            ele.style.color="green";
+            ele.style.borderRadius="5px";
+        }
+
+        function fun3(){
+            var ele=document.getElementById("div1");
+            // ele.innerText="<h1>我爱你中国！</h1>"
+            ele.innerHTML="<h1>我爱你中国！</h1>"
+        }
+     </script>
+
+     <style>
+        #t1{
+            color: rgb(186, 14, 14);
+        }
+     </style>
+</head>
+<body>
+    <input type="text" id="t1" value="hello">
+    <hr>
+    <div id="div1">
+        hello
+    </div>
+    <hr>
+    <button onclick="fun1()">修改属性</button>
+    <button onclick="fun2()">修改样式</button>
+    <button onclick="fun3()">修改文本</button>
+</body>
+</html>

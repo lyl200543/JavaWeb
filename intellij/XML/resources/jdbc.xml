@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+1.根标签有且只能有一个
+
+2.文档声明一定要从第一行第一列开始写
+<?xml version="1.0" encoding="UTF-8"?>
+
+3.根据XML约束中的规定来编写XML配置文件，而且会在我们编写XML的时候根据约束来提示我们编写,
+XML约束主要包括DTD和Schema两种
+-->
+<jdbc>
+    <dev id="001">
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <username>root</username>
+        <password>root</password>
+    </dev>
+
+    <test id="002">
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <username>zhangsan</username>
+        <password>123456</password>
+    </test>
+
+    <product id="003">
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <username>lisi</username>
+        <password>456789</password>
+    </product>
+</jdbc>

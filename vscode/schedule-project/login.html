@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .title {
+        text-align: center;
+        color: rgb(16, 165, 155);
+        font-family: "幼圆";
+      }
+      .tb {
+        width: 500px;
+        border: 5px solid rgb(16, 165, 155);
+        margin: 0px auto;
+        border-radius: 5px;
+        font-family: "幼圆";
+      }
+      .ltr td {
+        border: 1px solid rgb(13, 221, 207);
+      }
+      .ipt {
+        border: 0px;
+        width: 50%;
+      }
+      .btn1 {
+        border: 2px solid rgb(13, 221, 207);
+        border-radius: 5px;
+        font-family: "幼圆";
+        background-color: antiquewhite;
+        width: 60px;
+      }
+      .buttonContainer {
+        text-align: center;
+      }
+      #usernameMsg,
+      #pwdMsg {
+        color: brown;
+      }
+    </style>
+
+    <script>
+      function checkUser() {
+        var nameInput = document.getElementById("username");
+        var name = nameInput.value;
+        var reg = /^[a-zA-Z0-9]{5,10}$/;
+        var msg = document.getElementById("usernameMsg");
+        if (!reg.test(name)) {
+          msg.innerHTML = "账号格式错误";
+          return false;
+        }
+        msg.innerHTML = "OK";
+        return true;
+      }
+
+      function checkPwd() {
+        var pwdInput = document.getElementById("pwd");
+        var pwd = pwdInput.value;
+        var reg = /^[0-9]{6}$/;
+        var msg = document.getElementById("pwdMsg");
+        if (!reg.test(pwd)) {
+          msg.innerHTML = "密码格式错误";
+          return false;
+        }
+        msg.innerHTML = "OK";
+        return true;
+      }
+
+      function check() {
+        var flag1 = checkUser();
+        var flag2 = checkPwd();
+        return flag1 && flag2;
+      }
+
+      function release(){
+            var span1=document.getElementById("usernameMsg")
+            span1.innerHTML=""
+            var span2=document.getElementById("pwdMsg")
+            span2.innerHTML=""
+        }
+    </script>
+  </head>
+  <body>
+    <h1 class="title">欢迎使用日程管理系统</h1>
+    <h3 class="title">请登录</h3>
+    <form action="/user/login" method="post" onsubmit="return check()">
+      <table class="tb" cellspacing="0px">
+        <tr class="ltr">
+          <td>请输入账号</td>
+          <td>
+            <input id="username" class="ipt" type="text" onblur="checkUser()" />
+            <span id="usernameMsg"></span>
+          </td>
+        </tr>
+
+        <tr class="ltr">
+          <td>请输入密码</td>
+          <td>
+            <input id="pwd" class="ipt" type="password" onblur="checkPwd()" />
+            <span id="pwdMsg"></span>
+          </td>
+        </tr>
+
+        <tr class="ltr">
+          <td colspan="2" class="buttonContainer">
+            <input class="btn1" type="submit" value="登录" />
+            <input class="btn1" type="reset" value="重置" onclick="release()" />
+            <button class="btn1"><a href="regist.html">去注册</a></button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
