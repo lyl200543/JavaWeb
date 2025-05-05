@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+            color: rgb(16, 165, 155);
+            font-family: "幼圆";
+        }
+        .tb{
+            border: 5px solid rgb(16, 165, 155);
+            border-radius: 5px;
+            margin: 0px auto;
+            width: 500px;
+        }
+        .ltr td{
+            border: 1px solid rgb(13, 221, 207);
+        }
+
+        .button{
+            text-align: center;
+        }
+
+        .ipt{
+            border: 0px;
+        }
+
+        .btn1{
+            border: 2px solid rgb(13, 221, 207);
+            background-color: blanchedalmond;
+            font-family: "幼圆";
+            border-radius: 5px;
+        }
+
+        #usernameMsg,#pwdMsg,#conpwdMsg{
+            color: brown;
+            font-family: "幼圆";
+        }
+    </style>
+
+    <script>
+        function checkUser(){
+            var nameInput=document.getElementById("username")
+            var name=nameInput.value 
+            var reg=/^[a-zA-Z0-9]{5,10}$/
+            var msg=document.getElementById("usernameMsg")
+            if(!reg.test(name)){
+                msg.innerHTML="账号格式错误"
+                return false
+            }
+            msg.innerHTML="OK"
+            return true
+        }
+
+        function checkPwd(){
+            var pwdInput=document.getElementById("pwd")
+            var pwd=pwdInput.value 
+            var reg=/^[0-9]{6}$/
+            var msg=document.getElementById("pwdMsg")
+            if(!reg.test(pwd)){
+                msg.innerHTML="密码格式错误"
+                return false
+            }
+            msg.innerHTML="OK"
+            return true
+        }
+
+        function checkConpwd(){
+            var pwdInput=document.getElementById("pwd")
+            var pwd=pwdInput.value 
+            var conpwdInput=document.getElementById("conpwd")
+            var conpwd=conpwdInput.value 
+            var msg=document.getElementById("conpwdMsg")
+            var reg=/^[0-9]{6}$/
+            if(!reg.test(conpwd)){
+                msg.innerHTML="密码格式错误"
+                return false
+            }
+            if(pwd!=conpwd){
+                msg.innerHTML="密码不一致"
+                return false
+            }
+            msg.innerHTML="OK"
+            return true
+        }
+
+        function check(){
+            var flag1=checkUser()
+            var flag2=checkPwd()
+            var flag3=checkConpwd()
+
+            return flag1 && flag2 && flag3
+        }
+
+        function release(){
+            var span1=document.getElementById("usernameMsg")
+            span1.innerHTML=""
+            var span2=document.getElementById("pwdMsg")
+            span2.innerHTML=""
+            var span3=document.getElementById("conpwdMsg")
+            span3.innerHTML=""
+        }
+    </script>
+</head>
+<body>
+    <h1 class="title">欢迎使用日程管理系统</h1>
+    <h3 class="title">请注册</h3>
+    <form action="/user/regist" method="post" onsubmit="return check()">
+        <table class="tb" cellspacing="0px">
+            <tr class="ltr">
+                <td>请输入账号</td>
+                <td>
+                    <input id="username" type="text" class="ipt" onblur="checkUser()">
+                    <span id="usernameMsg"></span>
+                </td>
+            </tr>
+
+            <tr class="ltr">
+                <td>请输入密码</td>
+                <td>
+                    <input id="pwd" type="password" class="ipt" onblur="checkPwd()">
+                    <span id="pwdMsg"></span>
+                </td>
+            </tr>
+
+            <tr class="ltr">
+                <td>确认密码</td>
+                <td>
+                    <input id="conpwd" type="password" class="ipt" onblur="checkConpwd()">
+                    <span id="conpwdMsg"></span>
+                </td>
+            </tr>
+
+            <tr class="ltr">
+                <td colspan="2" class="button">
+                    <input type="submit" value="注册" class="btn1">
+                    <input type="reset" value="重置" class="btn1"  onclick="release()">
+                    <button class="btn1"><a href="login.html">去登录</a></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+</body>
+</html>
