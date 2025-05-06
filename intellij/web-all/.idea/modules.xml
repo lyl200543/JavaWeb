@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/web-all.iml" filepath="$PROJECT_DIR$/web-all.iml" />
       <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />
       <module fileurl="file://$PROJECT_DIR$/web02-servlet01/web02-servlet01.iml" filepath="$PROJECT_DIR$/web02-servlet01/web02-servlet01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web03-servletConfig-servletContext/web03-servletConfig-servletContext.iml" filepath="$PROJECT_DIR$/web03-servletConfig-servletContext/web03-servletConfig-servletContext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web04-forward-redirect/web04-forward-redirect.iml" filepath="$PROJECT_DIR$/web04-forward-redirect/web04-forward-redirect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web05-path/web05-path.iml" filepath="$PROJECT_DIR$/web05-path/web05-path.iml" />
     </modules>
   </component>
 </project>
