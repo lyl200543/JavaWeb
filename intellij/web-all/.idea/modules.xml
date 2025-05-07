@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/schedule_system/schedule_system.iml" filepath="$PROJECT_DIR$/schedule_system/schedule_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all.iml" filepath="$PROJECT_DIR$/web-all.iml" />
       <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />
       <module fileurl="file://$PROJECT_DIR$/web02-servlet01/web02-servlet01.iml" filepath="$PROJECT_DIR$/web02-servlet01/web02-servlet01.iml" />
