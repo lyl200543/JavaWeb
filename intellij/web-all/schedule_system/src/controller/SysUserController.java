@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import pojo.SysUser;
 import service.SysUserService;
 import service.impl.SysUserServiceImpl;
+import util.MD5Util;
 
 import java.io.IOException;
 
@@ -25,11 +26,25 @@ public class SysUserController extends ServiceBase {
         String password = req.getParameter("password");
         SysUser user = new SysUser(null , username , password);
         int rows = userService.regist(user);
-        if(rows>0){
+        if (rows > 0) {
             resp.sendRedirect("/registSuccess.html");
-        }
-        else {
+        } else {
             resp.sendRedirect("/registFail.html");
+        }
+    }
+
+    protected void login (HttpServletRequest req , HttpServletResponse resp) throws IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        SysUser user=userService.findByName(username);
+        if(null==user){
+            resp.sendRedirect("/loginUsernameError.html");
+        }
+        else if(!MD5Util.encrypt(password).equals(user.getUserPwd())){
+            resp.sendRedirect("/loginUserPwdError.html");
+        }
+        else{
+            resp.sendRedirect("/showSchedule.html");
         }
     }
 }

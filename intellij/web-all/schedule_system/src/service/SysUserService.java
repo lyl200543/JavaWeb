@@ -12,4 +12,5 @@ import pojo.SysUser;
 public interface SysUserService {
     int regist (SysUser user);
 
+    SysUser findByName (String username);
 }

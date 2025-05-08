@@ -11,4 +11,6 @@ import pojo.SysUser;
  */
 public interface SysUserDao {
     int add (SysUser user);
+
+    SysUser findByName (String username);
 }
