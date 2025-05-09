@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/web04-forward-redirect/web04-forward-redirect.iml" filepath="$PROJECT_DIR$/web04-forward-redirect/web04-forward-redirect.iml" />
       <module fileurl="file://$PROJECT_DIR$/web05-path/web05-path.iml" filepath="$PROJECT_DIR$/web05-path/web05-path.iml" />
       <module fileurl="file://$PROJECT_DIR$/web06-cookie-session/web06-cookie-session.iml" filepath="$PROJECT_DIR$/web06-cookie-session/web06-cookie-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web07-scope/web07-scope.iml" filepath="$PROJECT_DIR$/web07-scope/web07-scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web08-filter/web08-filter.iml" filepath="$PROJECT_DIR$/web08-filter/web08-filter.iml" />
     </modules>
   </component>
 </project>
