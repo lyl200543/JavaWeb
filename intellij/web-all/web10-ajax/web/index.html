@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--AJAX（Asynchronous JavaScript and XML）（异步）:
+        能够在不刷新整个页面的情况下与服务器进行通信并更新部分网页内容
+        XMLHttpRequest 是实现 Ajax 的一种方式
+        -->
+    <script>
+        function hello() {
+            //实例化一个xmlHttpRequest
+            var request = new XMLHttpRequest();
+
+            // 设置xmlHttpRequest对象的回调函数
+            //readyState:1 2 3 4(4代表请求已经完成)
+            //status:200 请求成功
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    // 接收响应结果，处理结果
+                    //request.responseText 后端响应回来的响应体中的数据
+                    var response = request.responseText;
+
+                    var ele = document.getElementById("msg");
+                    ele.value=response;
+                }
+            }
+
+            //设置发送请求的方式和请求的资源路径
+            request.open("GET", "/web10/s1?username=zhangsan");
+
+            //发送请求
+            request.send();
+        }
+    </script>
+</head>
+<body>
+<button onclick="hello()">按钮</button>
+<input type="text" id="msg">
+</body>
+</html>
