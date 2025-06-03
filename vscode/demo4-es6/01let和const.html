@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //let 和var的差别
+        // 1、let 不能重复声明
+
+        // var i=10
+        // var i=""
+
+        // let j=10
+        // let j=""
+
+        // 2、let有块级作用域，非函数的花括号遇见let会有块级作用域，也就是只能在花括号里面访问。
+
+        // {
+        //     var i=10
+        //     let j=10
+        // }
+        // console.log(i)
+        // console.log(j)
+
+        // 3、let不会预解析进行变量提升
+
+        // console.log(i);
+        // var i=10
+
+        // console.log(j);
+        // let j=10
+        
+        // 4、let 定义的全局变量不会作为window的属性
+
+        // var i=10
+        // console.log(window.i);
+        // let j=10
+        // console.log(window.j)
+        
+
+        // 5、let在es6中推荐优先使用
+
+        //const是不能改变的let
+        // const i=10
+        // i=20
+
+        //对数组而言，不能改变的是地址
+        // const arr=[1,2,3]
+        // // arr=[2,3,4]
+        // arr.push(4)
+
+        //模板字符串``,可以字符串可以换行
+        let a=` <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>`
+                
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // console.log(this);
+        
+        // let person={
+        //     name:"张三",
+        //     showName:function(){
+        //         console.log(this);
+        //         console.log(this.name);
+        //     },
+
+        //     //箭头函数没有自己的this，this指向的是外层上下文环境的this
+        //     viewName:()=>{
+        //         console.log(this);
+        //         console.log(person.name);
+        //     }
+            
+        // }
+
+        // person.showName()
+        // person.viewName()
+
+
+    </script>
+     <style>
+        #xdd{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="xdd"></div>
+    <script>
+        let xdd=document.getElementById("xdd")
+        xdd.onclick=function(){
+            // window.setTimeout(function(){
+            //     console.log(this);
+            //     xdd.style.backgroundColor="yellow"
+            // },2000)
+
+            window.setTimeout(()=>{
+                console.log(this);
+                this.style.backgroundColor="yellow"
+            },2000)
+        }
+    </script>
+</body>
+</html>
