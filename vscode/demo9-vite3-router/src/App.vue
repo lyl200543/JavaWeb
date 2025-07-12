@@ -4,6 +4,7 @@
 <template>
   <div>
     <h1>App页面顶部</h1><br>
+    <!-- 声明式路由 -->
     <router-link to="/home">home</router-link><br>
     <router-link to="/list">list</router-link><br>
     <router-link to="/add">add</router-link><br>
