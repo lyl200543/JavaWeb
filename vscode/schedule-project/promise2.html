@@ -4,6 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        // const promise=new Promise((resolve,reject)=>{
+        //     console.log("promise do some code...")
+        //     // resolve("promise success")
+        //     reject("promise fail")
+        // })
+
+        // promise.then(
+        //     (resolve)=>{
+        //         console.log(resolve+" rosolve")
+        //     }
+        // ).catch((error)=>{
+        //     console.log(error+" error")
+        //     }
+        // )
+
+        // console.log("code1 invoked...")
+        // console.log("code2 invoked...")
+
+
+         /* 
+            async 用于标识函数的
+            1. async标识函数后,async函数的返回值会变成一个promise对象
+            2. 如果函数内部返回的数据是一个非promise对象,async函数的结果会返回一个成功状态 promise对象
+            3. 如果函数内部返回的是一个promise对象,则async函数返回的状态与结果由该对象决定
+            4. 如果函数内部抛出的是一个异常,则async函数返回的是一个失败的promise对象
+
+        */
+
+        // async function fun1() {
+        //     // return 10
+        //     // throw new Error("something wrong")
+        //     return Promise.reject("reject")
+        // }
+        // fun1().then(
+        //     (resolve)=>{
+        //         console.log("success:"+resolve)
+        //     }
+        // ).catch(
+        //     (error)=>{
+        //         console.log("fail:"+error)
+
+        //     }
+        // )
+
+        /* 
+            1. await右侧的表达式一般为一个promise对象,但是也可以是一个其他值
+            2. 如果表达式是promise对象,await返回的是promise成功的值
+            3. await会等右边的promise对象执行结束,然后再获取结果,后续代码也会等待await的执行
+            4. 如果表达式是其他值,则直接返回该值
+            5. await必须在async函数中,但是async函数中可以没有await
+            6. 如果await右边的promise失败了,就会抛出异常,可以通过 try ... catch捕获处理
+        */
+
+        async function fun1() {
+            // return 10
+            // throw new Error("something wrong")
+            // return Promise.reject("reject")
+        }
+
+        async function fun2(){
+            try{
+                let value=await fun1()
+                console.log("await got:"+value)
+            }catch(e){
+                console.log("catch got:"+e)
+            }
+        }
+
+        fun2()
+
+    </script>
 </head>
 <body>
     
