@@ -1,27 +1,28 @@
 <script setup>
 import axios from 'axios'
-import {ref} from 'vue'
+import {ref,onMounted} from 'vue'
 
 let message=ref("土味情话")
 
-function getMessage(){
-  axios({
+function getWords(){
+  return axios({
     method:"get",
-    url:"https://api.uomg.com/api/rand.qinghua?format=json"
+    url:"/api/rand.qinghua?format=json"
     //请求体中内容：data:
     //路径参数内容：params:
-  }).then(
-    (Response)=>{
-      console.log(Response);
-      message.value=Response.data.content
-    }
-  ).catch(
-    (error)=>{
-      console.log(error);
-    }
-  )
-
+  })
 }
+
+async function getMessage(){
+  let {data} =await getWords()
+  message.value=data.content
+}
+
+onMounted(
+  ()=>{
+    getMessage()
+  }
+)
 </script>
 
 <template>
